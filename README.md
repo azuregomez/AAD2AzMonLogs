@@ -23,18 +23,19 @@ https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/howto
 <li>Meet the pre-requisites
 <li>Zip and upload aadapi.psm1 and pds1. <br/>https://docs.microsoft.com/en-us/azure/automation/shared-resources/modules
 <li>Modify the parameters in aad2azmon.ps1:<br>
-| Parameter | Description 
-| ----------- | -----------
-| $ClientID | Client ID from AAD App Registration
-| $ClientSecret | ClientSecret from AAD App Registration 
-| $workspaceId | Azure Monitor Logs (aka Log Analytics) Workspace ID
-| $SharedKey | Azure Monitor Logs Shared Key 
-| $prefix | AAD prefix to .onmicrosoft.com 
+  <table>
+    <tr><th>Parameter</th><th>Description</th></tr>
+    <tr><td>$ClientID</td><td>Client ID from AAD App Registration</td></tr>
+    <tr><td>$ClientSecret</td><td>ClientSecret from AAD App Registration</td></tr>
+    <tr><td>$workspaceId</td><td>Azure Monitor Logs (aka Log Analytics) Workspace ID</td></tr>
+    <tr><td>$SharedKey</td><td>Azure Monitor Logs Shared Key </td></tr>
+     <tr><td>$prefix</td><td>AAD prefix to .onmicrosoft.com </td></tr>
+  </table>
 <li>Upload or copy paste aad2azmon.ps1 as a Runbook in your Azure Automation Account
 <li>Add a Schedule to the Runbook, like every hour
 <li>Query AzMon Logs Custom Log named AADAuditApi_CL 
 </ol>
----
+
 <h3>Caveats:</h3>
 <ul>
 <li>Sign-in logs require AAD Premium
