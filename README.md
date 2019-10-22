@@ -5,7 +5,7 @@ https://docs.microsoft.com/en-us/azure/azure-monitor/platform/activity-logs-over
 However, when there is a requirement to send AAD Logs from a different tenant, we have to revert to a previously existing strategy.
 The strategy presented here creates an Azure Automation Runbook that gets the AAD Logs through an API call and puts them in an Azure Monitor Workspace as a custom table.
 <br/>
-<h3>Pre-requisites:</3>
+<h3>Pre-requisites:</h3>
 <ul>
 <li>Create an App Registration and provide RBAC access to the AAD Graph API. These credentials will be used from Azure Automation.  <br/>
 https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/howto-configure-prerequisites-for-reporting-api
