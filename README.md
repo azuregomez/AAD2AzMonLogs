@@ -1,5 +1,5 @@
 <h2>Send Azure AD Logs to Azure Monitor Logs</h2>
-The Azure AD Logs acn be automatically sent to Azure Monitor Logs:
+The Azure AD Logs acn be automatically sent to Azure Monitor Logs:<br/>
 https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics
 https://docs.microsoft.com/en-us/azure/azure-monitor/platform/activity-logs-overview
 However, when there is a requirement to send AAD Logs from a different tenant, we have to revert to a previously existing strategy.
