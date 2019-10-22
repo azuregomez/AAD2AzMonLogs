@@ -1,5 +1,4 @@
 <h2>Send Azure AD Logs to Azure Monitor Logs</h2>
-
 The Azure AD Logs acn be automatically sent to Azure Monitor Logs:
 https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics
 https://docs.microsoft.com/en-us/azure/azure-monitor/platform/activity-logs-overview
@@ -24,17 +23,18 @@ https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/howto
 <li>Meet the pre-requisites
 <li>Zip and upload aadapi.psm1 and pds1. <br/>https://docs.microsoft.com/en-us/azure/automation/shared-resources/modules
 <li>Modify the parameters in aad2azmon.ps1:<br>
-| Parameter | Description |
-|-----------|--------------|
-| $ClientID | Client ID from AAD App Registration |
-| $ClientSecret | ClientSecret from AAD App Registration |
-| $workspaceId | Azure Monitor Logs (aka Log Analytics) Workspace ID|
-| $SharedKey | Azure Monitor Logs Shared Key |
-| $prefix | AAD prefix to .onmicrosoft.com |
+| Parameter | Description 
+| ----------- | -----------
+| $ClientID | Client ID from AAD App Registration
+| $ClientSecret | ClientSecret from AAD App Registration 
+| $workspaceId | Azure Monitor Logs (aka Log Analytics) Workspace ID
+| $SharedKey | Azure Monitor Logs Shared Key 
+| $prefix | AAD prefix to .onmicrosoft.com 
 <li>Upload or copy paste aad2azmon.ps1 as a Runbook in your Azure Automation Account
 <li>Add a Schedule to the Runbook, like every hour
 <li>Query AzMon Logs Custom Log named AADAuditApi_CL 
 </ol>
+---
 <h3>Caveats:</h3>
 <ul>
 <li>Sign-in logs require AAD Premium
