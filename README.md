@@ -21,7 +21,7 @@ https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/howto
 <h3>How to run it:</h3>
 <ol>
 <li>Meet the pre-requisites
-<li>Zip and upload aadapi.psm1 and pds1. <br/>https://docs.microsoft.com/en-us/azure/automation/shared-resources/modules
+<li>Zip and upload aadapi.psm1 and pds1 as a new Module in you Azure Automation account <br/>https://docs.microsoft.com/en-us/azure/automation/shared-resources/modules
 <li>Modify the parameters in aad2azmon.ps1:<br>
   <table>
     <tr><th>Parameter</th><th>Description</th></tr>
