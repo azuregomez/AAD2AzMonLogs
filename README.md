@@ -6,37 +6,36 @@ https://docs.microsoft.com/en-us/azure/azure-monitor/platform/activity-logs-over
 However, when there is a requirement to send AAD Logs from a different tenant, we have to revert to a previously existing strategy.
 The strategy presented here creates an Azure Automation Runbook that gets the AAD Logs through an API call and puts them in an Azure Monitor Workspace as a custom table.
 <br/>
-Pre-requisites:
+<h3>Pre-requisites:</3>
 <ul>
 <li>Create an App Registration and provide RBAC access to the AAD Graph API. These credentials will be used from Azure Automation.  <br/>
 https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/howto-configure-prerequisites-for-reporting-api
 <li>Have an Automation Account.
 <li>Have a log analytics workspace.
 </ul>
-Components:
+<h3>Components:</h3>
 <ul>
 <li>aadapi.psm1 - Powershell module that implements cmdlets to read AAD Logs and Write to AzMon Logs
 <li>aadapi.psd1 - Module Manifest
 <li>aad2azmon.ps1 - Powershell Automation Runnbook that leverages the aadapi module to accomplish the task
-<ul>
-How to run it:
+</ul>
+<h3>How to run it:</h3>
 <ol>
 <li>Meet the pre-requisites
 <li>Zip and upload aadapi.psm1 and pds1. <br/>https://docs.microsoft.com/en-us/azure/automation/shared-resources/modules
 <li>Modify the parameters in aad2azmon.ps1:<br>
-|Parameret | Description |
--------------------------
-|$ClientID | Client ID from AAD App Registration |
-|$ClientSecret | ClientSecret from AAD App Registration |
-|$workspaceId | Azure Monitor Logs (aka Log Analytics) Workspace ID|
-|$SharedKey | Azure Monitor Logs Shared Key |
+| Parameter | Description |
+|-----------|--------------|
+| $ClientID | Client ID from AAD App Registration |
+| $ClientSecret | ClientSecret from AAD App Registration |
+| $workspaceId | Azure Monitor Logs (aka Log Analytics) Workspace ID|
+| $SharedKey | Azure Monitor Logs Shared Key |
 | $prefix | AAD prefix to .onmicrosoft.com |
 <li>Upload or copy paste aad2azmon.ps1 as a Runbook in your Azure Automation Account
 <li>Add a Schedule to the Runbook, like every hour
 <li>Query AzMon Logs Custom Log named AADAuditApi_CL 
 </ol>
-
-Caveats:
+<h3>Caveats:</h3>
 <ul>
 <li>Sign-in logs require AAD Premium
 <li>This repository is from code I wrote in 2017.  Using the Automation Run-As account identity instead of an App Registration may be a better implementation.
