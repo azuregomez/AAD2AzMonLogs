@@ -1,0 +1,13 @@
+
+_test/aad2oms_poc.txt
+_test/aadapi.json
+_test/aadapi.zip
+_test/aadaudit.ps1
+_test/aadauth.ps1
+_test/aadsignin.ps1
+_test/activity.ps1
+_test/audit0.json
+_test/realparams.txt
+_test/SigninActivities0.json
+_test/testmodule.psd1
+_test/testmodule.psm1
