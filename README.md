@@ -36,10 +36,12 @@ https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/howto
 <li>Query AzMon Logs Custom Log named AADAuditApi_CL 
 </ol>
 
-<h3>Caveats:</h3>
+<h3>Caveats and limitations:</h3>
 <ul>
 <li>Sign-in logs require AAD Premium
 <li>This repository is from code I wrote in 2017.  Using the Automation Run-As account identity instead of an App Registration may be a better implementation.
+<li>This code leverages the old AzureRM Powershel cmdlets. It needs top be updated to the latest Az cmdlets
+<li>Additional Exception Handling would be advise for a Prod environment
 </ul>
 
 
